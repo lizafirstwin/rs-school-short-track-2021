@@ -11,15 +11,16 @@
  *
  */
 function getSumOfDigits(num) {
-  // const arr = num.toString().split('');
-  // let sum;
-  // do {
-  //   sum = 0;
-  //   for (let item = 0; item < arr.length; item++) {
-  //     sum += +arr[item];
-  //   }
-  // } while (sum > 9);
-  return num;
+  let arr = num.toString().split('');
+  let sum = 0;
+  do {
+    sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      sum += +arr[i];
+    }
+    arr = sum.toString().split('');
+  } while (sum > 9);
+  return sum;
 }
 
 module.exports = getSumOfDigits;
